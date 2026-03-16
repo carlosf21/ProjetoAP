@@ -1,20 +1,18 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import numpy as np
 
 from layers import DenseLayer
 from losses import LossFunction, MeanSquaredError
 from optimizer import Optimizer
 from metrics import mse
+from typing import Callable
 
 
 class NeuralNetwork:
  
     def __init__(self, epochs = 100, batch_size = 128, optimizer = None,
                  learning_rate = 0.01, momentum = 0.90, verbose = False, 
-                 loss = MeanSquaredError,
-                 metric:callable = mse):
+                 loss = None,
+                 metric: Callable = mse):
         self.epochs = epochs
         self.batch_size = batch_size
         self.optimizer = Optimizer(learning_rate=learning_rate, momentum= momentum)
