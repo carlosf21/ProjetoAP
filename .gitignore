@@ -27,7 +27,6 @@ share/python-wheels/
 MANIFEST
 
 
-model*/
 unsloth*/
 backups/
 df*.csv
